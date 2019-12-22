@@ -5,6 +5,11 @@ Algorithms and data structures from:
 * Grokking Algorithms
 * Hacker Rank
 
+incl.:
+
+* __search__: binary, breadth-first
+* __sort__: selection, quick
+
 because:
 
 * curiosity

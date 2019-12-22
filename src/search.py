@@ -26,7 +26,7 @@ def binary(query, sorted_list):
 
 
 def bfs(graph, condition):
-    queue = deque(graph['root'])
+    queue = deque(graph["root"])
     while queue:
         current = queue.popleft()
         if current is condition:

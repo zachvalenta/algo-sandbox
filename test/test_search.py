@@ -19,9 +19,9 @@ def test_binary_sad():
 
 def test_bfs():
     network = dict()
-    network['root'] = ['amber', 'sean', 'jack']
-    network['amber'] = ['joe']
-    network['jack'] = ['shuja', 'garrett']
-    network['shuja'] = ['trotsky']
-    assert search.bfs(network, 'trotsky') is True
-    assert search.bfs(network, 'bob') is False
+    network["root"] = ["amber", "sean", "jack"]
+    network["amber"] = ["joe"]
+    network["jack"] = ["shuja", "garrett"]
+    network["shuja"] = ["trotsky"]
+    assert search.bfs(network, "trotsky") is True
+    assert search.bfs(network, "bob") is False
