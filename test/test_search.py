@@ -25,3 +25,22 @@ def test_bfs():
     network["shuja"] = ["trotsky"]
     assert search.bfs(network, "trotsky") is True
     assert search.bfs(network, "bob") is False
+
+
+def test_dijkstra():
+    # nodes
+    graph = {}
+    graph["root"] = {}
+    graph["a"] = {}
+    graph["b"] = {}
+    graph["terminus"] = None
+
+    # edges
+    graph["root"]["a"] = 6
+    graph["root"]["b"] = 2
+    graph["a"]["terminus"] = 1
+    graph["b"]["a"] = 3
+    graph["b"]["terminus"] = 5
+
+    # TODO rf to return path/path weight to terminus
+    assert search.dijkstra(graph) == {'a': 5, 'b': 2, 'terminus': 6}
