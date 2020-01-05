@@ -1,4 +1,9 @@
-from src.interviews import container_ship, find_longest_substring, word_count
+from src.interviews import (
+    container_ship,
+    count_pairs,
+    find_longest_substring,
+    word_count,
+)
 
 
 def test_container_ship():
@@ -17,3 +22,8 @@ def test_find_longest_substring():
 def test_word_count():
     text = "wipe the sweat off my dome, spit the phlegm in the street"
     assert word_count(text) == "the"
+
+
+def test_count_pairs():
+    assert count_pairs(numbers=[4, 3, 2, 9, -2, 3], target=7) == 3
+    assert count_pairs([4, 4, 1, 4, 3, 5, 4], target=8) == 7

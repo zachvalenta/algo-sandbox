@@ -49,4 +49,4 @@ def test_dijkstra():
     paths['a']  # 'b'
     paths['b']  # 'root'
     """
-    assert search.dijkstra(graph) == {'a': 5, 'b': 2, 'terminus': 6}
+    assert search.dijkstra(graph) == {"a": 5, "b": 2, "terminus": 6}

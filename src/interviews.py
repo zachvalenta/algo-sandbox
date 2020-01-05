@@ -51,3 +51,19 @@ def find_longest_substring(query):
 
 def word_count(text):
     return Counter(text.split()).most_common()[0][0]
+
+
+def count_pairs(numbers, target):
+    """
+    return a count of the pairs in `numbers` that sum to `target`
+
+    each array element may appear in n pairs
+    e.g. for list `[4, 2, 1, 2]` where `target` is 6
+    4 can pair w/ both 2s
+    """
+    times_target_met = 0
+    for ind, num in enumerate(numbers):
+        for sub_num in numbers[ind + 1 :]:
+            if num + sub_num == target:
+                times_target_met += 1
+    return times_target_met
