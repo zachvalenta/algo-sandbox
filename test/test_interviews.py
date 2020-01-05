@@ -1,4 +1,4 @@
-from src.za import container_ship, find_longest_substring, word_count
+from src.interviews import container_ship, find_longest_substring, word_count
 
 
 def test_container_ship():

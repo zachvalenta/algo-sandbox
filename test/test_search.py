@@ -43,4 +43,10 @@ def test_dijkstra():
     graph["b"]["terminus"] = 5
 
     # TODO rf to return path/path weight to terminus
+    """
+    paths  # {'a': 'b', 'b': 'root', 'terminus': 'a'}
+    paths['terminus']  # 'a'
+    paths['a']  # 'b'
+    paths['b']  # 'root'
+    """
     assert search.dijkstra(graph) == {'a': 5, 'b': 2, 'terminus': 6}
