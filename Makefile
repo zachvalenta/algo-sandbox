@@ -17,10 +17,8 @@ help:
 	@echo
 	@echo "📦 DEPENDENCIES"
 	@echo
-	@echo "deps:       dependency graph"
-	@echo "install:    install dependencies from requirements.txt"
-	@echo "purge:      remove any installed pkg *not* in requirements.txt"
-	@echo "freeze:     freeze dependencies into requirements.txt"
+	@echo "env:        show environment info"
+	@echo "deps:       list prod dependencies"
 	@echo
 	@echo "======================================================================"
 	@echo
@@ -30,49 +28,30 @@ help:
 #
 
 repl:
-	source venv/bin/activate; bpython
+	poetry run bpython
 
 #
 # 📊 CODE QUALITY
 #
 
 test:
-	source venv/bin/activate; coverage run --source='src' -m pytest -v && coverage report -m
+	poetry run coverage run --source='src' -m pytest -v && poetry run coverage report -m
 
 cov:
-	source venv/bin/activate; coverage html; open htmlcov/index.html
+	poetry run coverage html; open htmlcov/index.html
 
 lint:
-	source venv/bin/activate; flake8 src test
+	poetry run flake8 src test
 
 fmt:
-	source venv/bin/activate; black src test
+	poetry run black src test
 
 #
 # 📦 DEPENDENCIES
 #
 
+env:
+	poetry env info
+
 deps:
-	source venv/bin/activate; pipdeptree
-
-install:
-	source venv/bin/activate; pip install -r requirements.txt
-
-purge:
-	@echo "🔍 - DISCOVERING UNSAVED PACKAGES\n"
-	source venv/bin/activate; pip freeze > pkgs-to-rm.txt
-	@echo
-	@echo "📦 - UNINSTALL ALL PACKAGES\n"
-	source venv/bin/activate; pip uninstall -y -r pkgs-to-rm.txt
-	@echo
-	@echo "♻️  - REINSTALL SAVED PACKAGES\n"
-	source venv/bin/activate; pip install -r requirements.txt
-	@echo
-	@echo "🗑  - UNSAVED PACKAGES REMOVED\n"
-	diff pkgs-to-rm.txt requirements.txt | grep '<'
-	@echo
-	rm pkgs-to-rm.txt
-	@echo
-
-freeze:
-	source venv/bin/activate; pip freeze > requirements.txt
+	poetry show --tree --no-dev

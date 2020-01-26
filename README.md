@@ -5,10 +5,10 @@ Algorithms and data structures from:
 * Grokking Algorithms
 * Hacker Rank
 
-incl.:
+including implementations of:
 
-* __search__: binary, breadth-first
-* __sort__: selection, quick
+* __search__: binary, breadth-first, Dijkstra
+* __sort__: quick, selection
 
 because:
 
@@ -17,8 +17,7 @@ because:
 
 # run locally
 
-* dependencies - [make virtual environment and activate](https://github.com/zachvalenta/dotfiles/blob/master/.bash_profile#L80)
-* dependencies - `make install`
+* dependencies - `poetry install`
 * everything else - `make help`
 
 ```sh
