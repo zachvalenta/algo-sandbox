@@ -1,12 +1,4 @@
 def set_cover(states_needed, stations):
-    states_needed = {"mt", "wa", "or", "id", "nv", "ut", "ca", "az"}
-    stations = {
-        "kone": {"id", "nv", "ut"},
-        "ktwo": {"wa", "id", "mt"},
-        "kthree": {"or", "nv", "ca"},
-        "kfour": {"nv", "ut"},
-        "kfive": {"ca", "az"},
-    }
     states_covered = set()
     stations_chosen = list()
 
