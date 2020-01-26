@@ -36,10 +36,8 @@ fmt:        autoformat using black
 
 📦 DEPENDENCIES
 
-deps:       dependency graph
-install:    install dependencies from requirements.txt
-purge:      remove any installed pkg *not* in requirements.txt
-freeze:     freeze dependencies into requirements.txt
+env:        show environment info
+deps:       list prod dependencies
 
 ======================================================================
 ```
