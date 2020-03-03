@@ -5,6 +5,13 @@ https://www.hackerrank.com/domains/regex
 import re
 
 
+def test_file_extension_tarball():
+    regex = "^[\w\-]*\.tar\.gz$"
+    assert re.search(regex, "my-file.tar.gz") is not None
+    assert re.search(regex, "my1_file.tar.gz") is not None
+    assert re.search(regex, "sample.txt") is None
+
+
 def test_word_boundary():
     """
     - starts w/ lower/upper vowel
