@@ -20,7 +20,7 @@ because:
 * dependencies - `poetry install`
 * everything else - `make help`
 
-```sh
+```makefile
 ======================================================================
 
 🛠  UTILS

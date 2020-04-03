@@ -1,4 +1,16 @@
-from src.za import set_cover
+from src.za import set_cover, countdown, do_factorial, do_sum
+
+
+def test_countdown():
+    assert countdown(0) is None
+
+
+def test_do_sum():
+    assert do_sum(4) == 10
+
+
+def test_do_factorial():
+    do_factorial(4) == 24
 
 
 def test_set_cover():

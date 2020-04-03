@@ -1,4 +1,5 @@
 from src.interviews import (
+    common_substring,
     container_ship,
     count_pairs,
     find_longest_substring,
@@ -10,6 +11,11 @@ def test_container_ship():
     consumption = [3, 5, 2, 1]
     timestamps = [0, 3, 5, 8]
     assert container_ship(cons=consumption, stamps=timestamps) == 25
+
+
+def test_common_substring():
+    assert common_substring("hello", "world") == "YES"
+    assert common_substring("hi", "world") == "NO"
 
 
 def test_find_longest_substring():
