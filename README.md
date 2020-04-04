@@ -2,8 +2,8 @@
 
 Algorithms and data structures from:
 
-* Grokking Algorithms
-* Hacker Rank
+* [Grokking Algorithms](https://www.manning.com/books/grokking-algorithms)
+* [Hacker Rank](https://www.hackerrank.com/interview/interview-preparation-kit)
 
 including implementations of:
 
@@ -17,7 +17,8 @@ because:
 
 # run locally
 
-* dependencies - `poetry install`
+* install dependencies - `poetry install`
+* Git hooks - `make hooks`
 * everything else - `make help`
 
 ```makefile
@@ -33,6 +34,7 @@ test:       run unit tests, view basic coverage report in terminal
 cov:        view HTML coverage report in browser
 lint:       lint using flake8
 fmt:        autoformat using black
+hooks:      set Git hooks w/ pre-commit
 
 📦 DEPENDENCIES
 

@@ -1,10 +1,5 @@
-"""
-FIRST FROM EACH
-https://www.hackerrank.com/interview/interview-preparation-kit
-"""
-
-
 def sum_hourglass(arr):
+    """https://www.hackerrank.com/challenges/2d-array"""
     global_high = 0
     for ind, two_d in list(enumerate(arr))[:4]:
         for sy, el in list(enumerate(two_d))[:4]:
@@ -20,14 +15,9 @@ def sum_hourglass(arr):
     return global_high
 
 
-"""
-WARMUP
-https://www.hackerrank.com/interview/interview-preparation-kit/warmup/challenges
-"""
-
-
 def counting_valleys(s):
     """
+    https://www.hackerrank.com/challenges/counting-valleys
     * count number of time you go below and then return to sea level
     * scratch the phrase 'consecutive steps' from the problem statement
     """
@@ -46,6 +36,7 @@ def counting_valleys(s):
 
 def jump_clouds(c):
     """
+    https://www.hackerrank.com/challenges/jumping-on-the-clouds
     * input is list of 0s and 1s
     * get to last index in as few moves as possible
     * can move to index that is is either 1 or 2 greater than current
@@ -72,6 +63,9 @@ def jump_clouds(c):
 
 
 def repeated_string(s, n):
+    """
+    https://www.hackerrank.com/challenges/repeated-string
+    """
     whole = n // len(s)
     remainder = n % len(s)
     base_count = whole * s.count("a")
@@ -80,6 +74,7 @@ def repeated_string(s, n):
 
 def sock_merchant(ar):
     """
+    https://www.hackerrank.com/challenges/sock-merchant
     sample input:
     n - 9
     ar - 10, 20, 20, 10, 10, 30, 50, 10, 20
