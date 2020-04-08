@@ -11,6 +11,7 @@ help:
 	@echo "📊 CODE QUALITY"
 	@echo
 	@echo "test:       run unit tests, view basic coverage report in terminal"
+	@echo "pdb:        drop breakpoint in failing test"
 	@echo "cov:        view HTML coverage report in browser"
 	@echo "lint:       lint using flake8"
 	@echo "fmt:        autoformat using black"
@@ -37,6 +38,9 @@ repl:
 
 test:
 	poetry run coverage run --source='src' -m pytest -v && poetry run coverage report -m
+
+pdb:
+	poetry run coverage run --source='src' -m pytest -s --pdb
 
 cov:
 	poetry run coverage html; open htmlcov/index.html

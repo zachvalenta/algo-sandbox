@@ -1,10 +1,32 @@
 from src.hacker_rank import (
     counting_valleys,
     jump_clouds,
+    ransom_note,
     repeated_string,
     sock_merchant,
     sum_hourglass,
 )
+
+
+def test_ransom_note():
+    assert (
+        ransom_note(
+            magazine="give me one grand today night", note="give one grand today"
+        )
+        is True
+    )
+    assert (
+        ransom_note(
+            magazine="two times three is not four", note="two times two is four"
+        )
+        is False
+    )
+    assert (
+        ransom_note(
+            magazine="ive got a lovely bunch of flower", note="ive got some coconuts"
+        )
+        is False
+    )
 
 
 def test_counting_valleys():

@@ -1,3 +1,27 @@
+def ransom_note(magazine, note):
+    """
+    https://www.hackerrank.com/challenges/ctci-ransom-note
+    * problem: does 'magazine' contain same substrings (and same number) as 'note' ?
+    * my initial solution that doesn't handle dupes:
+    * they want you to print to stdout instead of returning bool ¯\_(ツ)_/¯
+    # NOQA return True if (set(magazine.split(' ')) & set(note.split(' '))) == set(note.split(' ')) else False
+    """
+    note_map = dict()
+    for word in note.split(" "):
+        if word in note_map:
+            note_map[word] = note_map[word] + 1
+        else:
+            note_map[word] = 1
+    magazine_map = dict()
+    for word in magazine.split(" "):
+        if word in note_map:
+            if word in magazine_map:
+                magazine_map[word] = magazine_map[word] + 1
+            else:
+                magazine_map[word] = 1
+    return note_map == magazine_map
+
+
 def sum_hourglass(arr):
     """https://www.hackerrank.com/challenges/2d-array"""
     global_high = 0
