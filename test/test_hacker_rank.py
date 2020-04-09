@@ -27,6 +27,20 @@ def test_ransom_note():
         )
         is False
     )
+    assert (
+        ransom_note(
+            magazine="apgo clm w lxkvg mwz elo bg elo lxkvg elo apgo apgo w elo bg",
+            note="elo lxkvg bg mwz clm w",
+        )
+        is True
+    )
+    assert (
+        ransom_note(
+            magazine="apgo clm w lxkvg mwz elo bg elo lxkvg elo apgo apgo w elo bg",
+            note="elo elo elo elo",
+        )
+        is True
+    )
 
 
 def test_counting_valleys():

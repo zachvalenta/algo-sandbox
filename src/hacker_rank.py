@@ -15,7 +15,7 @@ def ransom_note(magazine, note):
     magazine_map = dict()
     for word in magazine.split(" "):
         if word in note_map:
-            if word in magazine_map:
+            if word in magazine_map and magazine_map[word] < note_map[word]:
                 magazine_map[word] = magazine_map[word] + 1
             else:
                 magazine_map[word] = 1
