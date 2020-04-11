@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from src.hacker_rank import (
     counting_valleys,
     jump_clouds,
@@ -11,36 +13,81 @@ from src.hacker_rank import (
 def test_ransom_note():
     assert (
         ransom_note(
-            magazine="give me one grand today night", note="give one grand today"
+            magazine=["give", "me", "one", "grand", "today", "night"],
+            note=["give", "one", "grand", "today"],
         )
         is True
     )
     assert (
         ransom_note(
-            magazine="two times three is not four", note="two times two is four"
+            magazine=["two", "times", "three", "is", "not", "four"],
+            note=["two", "times", "two" "is", "four"],
         )
         is False
     )
     assert (
         ransom_note(
-            magazine="ive got a lovely bunch of flower", note="ive got some coconuts"
+            magazine=["ive", "got", "a", "lovely" "bunch", "of", "flower"],
+            note=["ive", "got", "some", "coconuts"],
         )
         is False
     )
     assert (
         ransom_note(
-            magazine="apgo clm w lxkvg mwz elo bg elo lxkvg elo apgo apgo w elo bg",
-            note="elo lxkvg bg mwz clm w",
+            magazine=[
+                "apgo",
+                "clm",
+                "w",
+                "lxkvg",
+                "mwz",
+                "elo",
+                "bg",
+                "elo",
+                "lxkvg",
+                "elo",
+                "apgo",
+                "apgo",
+                "w",
+                "elo",
+                "bg",
+            ],
+            note=["elo", "lxkvg", "bg", "mwz", "clm", "w"],
         )
         is True
     )
     assert (
         ransom_note(
-            magazine="apgo clm w lxkvg mwz elo bg elo lxkvg elo apgo apgo w elo bg",
-            note="elo elo elo elo",
+            magazine=[
+                "apgo",
+                "clm",
+                "w",
+                "lxkvg",
+                "mwz",
+                "elo",
+                "bg",
+                "elo",
+                "lxkvg",
+                "elo",
+                "apgo",
+                "apgo",
+                "w",
+                "elo",
+                "bg",
+            ],
+            note=["elo", "elo", "elo", "elo"],
         )
         is True
     )
+    # larger data set
+    mag_path = Path.cwd().joinpath("resources").joinpath("mag.txt")
+    mag = list()
+    with open(mag_path) as f:
+        mag.extend(f.read().split(" "))
+    note_path = Path.cwd().joinpath("resources").joinpath("note.txt")
+    note = list()
+    with open(note_path) as f:
+        note.extend(f.read().split(" "))
+    assert ransom_note(magazine=mag, note=note) is True
 
 
 def test_counting_valleys():

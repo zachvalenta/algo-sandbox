@@ -7,13 +7,15 @@ def ransom_note(magazine, note):
     # NOQA return True if (set(magazine.split(' ')) & set(note.split(' '))) == set(note.split(' ')) else False
     """
     note_map = dict()
-    for word in note.split(" "):
+    for word in note:
         if word in note_map:
             note_map[word] = note_map[word] + 1
         else:
             note_map[word] = 1
     magazine_map = dict()
-    for word in magazine.split(" "):
+    for word in magazine:
+        if note_map == magazine_map:
+            return True
         if word in note_map:
             if word in magazine_map and magazine_map[word] < note_map[word]:
                 magazine_map[word] = magazine_map[word] + 1
