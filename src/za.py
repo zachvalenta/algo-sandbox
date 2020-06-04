@@ -7,6 +7,13 @@ def rotate_array(arr):
     return dq
 
 
+def reverse_array_imperative(arr):
+    holder = []
+    for i in reversed(arr):
+        holder.append(i)
+    return holder
+
+
 def set_cover(states_needed, stations):
     states_covered = set()
     stations_chosen = list()

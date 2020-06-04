@@ -1,4 +1,11 @@
-from src.za import set_cover, countdown, do_factorial, do_sum, rotate_array
+from src.za import (
+    countdown,
+    do_factorial,
+    do_sum,
+    reverse_array_imperative,
+    rotate_array,
+    set_cover,
+)
 
 
 def test_countdown():
@@ -33,3 +40,8 @@ def test_set_cover():
 def test_rotate_array():
     my_arr = [1, 2, 3, 4]
     assert list(rotate_array(my_arr)) == [4, 1, 2, 3]
+
+
+def test_reverse_array_imperative():
+    my_arr = [1, 2, 3, 4]
+    assert reverse_array_imperative(my_arr) == [4, 3, 2, 1]
