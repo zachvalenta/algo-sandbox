@@ -11,7 +11,7 @@ help:
 	@echo "📊 CODE QUALITY"
 	@echo
 	@echo "test:       run unit tests, view basic coverage report in terminal"
-	@echo "pdb:        run unit tests w/ breakpoint"
+	@echo "pdb:        run unit tests w/ pdb breakpoint"
 	@echo "cov:        view HTML coverage report in browser"
 	@echo "lint:       lint using flake8"
 	@echo "fmt:        autoformat using black"

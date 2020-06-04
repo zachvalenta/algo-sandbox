@@ -1,3 +1,12 @@
+from collections import deque
+
+
+def rotate_array(arr):
+    dq = deque(arr)
+    dq.rotate(1)
+    return dq
+
+
 def set_cover(states_needed, stations):
     states_covered = set()
     stations_chosen = list()
