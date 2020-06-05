@@ -1,4 +1,9 @@
 def quicksort(unsorted_list):
+    """
+    📙 4.65
+    📈 O (n log n)
+    💡 partition on pivot until you get two el you can swap
+    """
 
     # BASE
     if len(unsorted_list) < 2:
@@ -24,8 +29,10 @@ def quicksort(unsorted_list):
 
 def selection_sort(unsorted_list):
     """
-    * 📙 32
-    * 📈 O(n^2)
+    📙 2.32
+    📈 O(n^2)
+    💡 iterate, helper function grabs high value and
+    add to return list, rm from input list
     """
     unsorted_list_len = len(unsorted_list)
     sorted_list = []
