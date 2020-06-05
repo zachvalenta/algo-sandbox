@@ -14,6 +14,15 @@ def reverse_array_imperative(arr):
     return holder
 
 
+def fizz_buzz(num):
+    if num % 3 == 0:
+        return "fizz"
+    elif num % 5 == 0:
+        return "buzz"
+    else:
+        return num
+
+
 def set_cover(states_needed, stations):
     states_covered = set()
     stations_chosen = list()
