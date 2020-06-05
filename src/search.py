@@ -3,6 +3,12 @@ import random
 
 
 def simple():
+    """
+    🛠 look around in the attic
+    📙 1.5
+    📈 O(n)
+    💡 "is it this one?" all the way through
+    """
     number_to_guess = random.randint(0, 99)
     accumulated_guesses = 0
     for guess in range(0, 100):
@@ -12,6 +18,11 @@ def simple():
 
 
 def binary(query, sorted_list):
+    """
+    📙 1.6-8, 11.205
+    📈 vs BST: ❌ slower for mutative ✅ O(log n) worst case, random access
+    💡 needs sorted array, track low/high indices and derive middle index to halve list
+    """
     low_index = 0
     high_index = len(sorted_list) - 1
     while low_index <= high_index:
@@ -26,6 +37,12 @@ def binary(query, sorted_list):
 
 
 def bfs(graph, condition):
+    """
+    🛠 shortest path through unweighted graph
+    📙 6.110
+    📈 O(n) where n is number of edges
+    💡 take root K and handle each V (exit if yes, use V as K and enque its V)
+    """
     queue = deque(graph["root"])
     while queue:
         current = queue.popleft()
@@ -67,6 +84,12 @@ def get_node_w_lightest_path(path_weights, processed_nodes):
 
 
 def dijkstra(graph):
+    """
+    🛠 lightest path (weighted graph)
+    📙 7.116
+    📈 O(E log V) where E = edges and V = vertices https://stackoverflow.com/a/26548129
+    💡 can't deal w/ negative weights [7.129]
+    """
 
     # get starting values
     paths = get_initial_paths(graph)
