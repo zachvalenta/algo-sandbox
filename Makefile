@@ -4,14 +4,14 @@ help:
 	@echo
 	@echo "======================================================================"
 	@echo
-	@echo "🛠  UTILS"
+	@echo "🐛  DEBUG"
 	@echo
+	@echo "pdb:        run unit tests w/ pdb breakpoint"
 	@echo "repl:       open REPL w/ bpython"
 	@echo
 	@echo "📊 CODE QUALITY"
 	@echo
 	@echo "test:       run unit tests, view basic coverage report in terminal"
-	@echo "pdb:        run unit tests w/ pdb breakpoint"
 	@echo "cov:        view HTML coverage report in browser"
 	@echo "lint:       lint using flake8"
 	@echo "fmt:        autoformat using black"
@@ -26,8 +26,11 @@ help:
 	@echo
 
 #
-# 🛠 UTILS
+# 🐛  DEBUG
 #
+
+pdb:
+	poetry run coverage run --source='src' -m pytest -s --pdb
 
 repl:
 	poetry run bpython
@@ -38,9 +41,6 @@ repl:
 
 test:
 	poetry run coverage run --source='src' -m pytest -v && poetry run coverage report -m
-
-pdb:
-	poetry run coverage run --source='src' -m pytest -s --pdb
 
 cov:
 	poetry run coverage html; open htmlcov/index.html
