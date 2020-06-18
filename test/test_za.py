@@ -2,6 +2,7 @@ from src.za import (
     countdown,
     do_factorial,
     do_sum,
+    find_positive_factors,
     fizz_buzz,
     reverse_array_imperative,
     rotate_array,
@@ -52,3 +53,8 @@ def test_fizz_buzz():
     assert fizz_buzz(3) == "fizz"
     assert fizz_buzz(5) == "buzz"
     assert fizz_buzz(7) == 7
+
+
+def test_find_positive_factors():
+    assert find_positive_factors(16) == [1, 2, 4, 8, 16]
+    assert find_positive_factors(100) == [1, 2, 4, 5, 10, 20, 25, 50, 100]
