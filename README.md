@@ -18,14 +18,15 @@ because:
 # run locally
 
 * install dependencies - `poetry install`
-* Git hooks - `make hooks`
+* install Git hooks - `make hooks`
 * everything else - `make help`
 
 ```makefile
 ======================================================================
 
-🛠  UTILS
+🐛  DEBUG
 
+pdb:        run unit tests w/ pdb breakpoint
 repl:       open REPL w/ bpython
 
 📊 CODE QUALITY

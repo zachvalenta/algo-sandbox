@@ -1,4 +1,4 @@
-from src.interviews import (
+from src.mianshi import (
     common_substring,
     container_ship,
     count_pairs,
