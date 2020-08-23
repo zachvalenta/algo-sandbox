@@ -33,7 +33,7 @@ pdb:
 	poetry run coverage run --source='src' -m pytest -s --pdb
 
 repl:
-	poetry run bpython
+	export PYTHONSTARTUP='./repl.py' && poetry run bpython
 
 #
 # 📊 CODE QUALITY
