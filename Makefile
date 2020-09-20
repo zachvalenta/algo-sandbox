@@ -40,7 +40,8 @@ repl:
 #
 
 test:
-	poetry run coverage run --source='src' -m pytest -v && poetry run coverage report -m
+	# workaround for terminal freeze if pytest run encounters breakpoint
+	rg pdb -g 'src/*' || rg pdb -g 'test/*' || poetry run coverage run --source='src' -m pytest -v && poetry run coverage report -m
 
 cov:
 	poetry run coverage html; open htmlcov/index.html
