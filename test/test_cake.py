@@ -2,6 +2,12 @@ from src.cake import mtg_merge
 
 
 def test_mtg_merge():
-    # other pairs (11, 15) (12, 15) (6, 11)
-    assert mtg_merge(mtgs=[(7, 10), (3, 5)]) == [(3, 5), (7, 10)]
-    assert mtg_merge(mtgs=[(7, 10), (3, 6)]) == [(3, 10)]
+    control = (7, 10)
+    # link miss to control minorant
+    assert mtg_merge(mtgs=[(control), (3, 5)]) == [(3, 5), (control)]
+    # link to control minorant
+    assert mtg_merge(mtgs=[(control), (3, 6)]) == [(3, 10)]
+    # link to control majorant
+    assert mtg_merge(mtgs=[(control), (11, 15)]) == [(7, 15)]
+    # link miss to control majorant
+    assert mtg_merge(mtgs=[(control), (12, 15)]) == [(control), (12, 15)]
