@@ -17,9 +17,12 @@ def mtg_merge(mtgs):
         block_start = blocks[0][0]
         block_end = blocks[0][1]
         # conditions
-        linkable = block_end + 1 == mtg_start
+        link_maj_to_min = block_end + 1 == mtg_start
+        link_min_to_min = block_start + 1 == mtg_start
         # logic
-        if linkable:
+        if link_maj_to_min:
+            blocks[0] = (block_start, mtg_end)
+        elif link_min_to_min:
             blocks[0] = (block_start, mtg_end)
         else:
             blocks.append((mtg_start, mtg_end))
