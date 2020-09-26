@@ -15,3 +15,5 @@ def test_mtg_merge():
     # MINORANT TO MINORANT
     # link
     assert mtg_merge(mtgs=[control, (6, 9)]) == [(6, 10)]
+
+    assert mtg_merge(mtgs=[control, (3, 11)]) == [(3, 11)]
