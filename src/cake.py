@@ -21,12 +21,12 @@ def mtg_merge(mtgs):
         link_min_to_min = block_start + 1 == mtg_start
         link_maj_to_maj = block_end > mtg_end
         # logic
-        if link_maj_to_min:
+        if link_maj_to_maj:
+            continue
+        elif link_maj_to_min:
             blocks[0] = (block_start, mtg_end)
         elif link_min_to_min:
             blocks[0] = (block_start, mtg_end)
-        elif link_maj_to_maj:
-            continue
         else:
             blocks.append((mtg_start, mtg_end))
     return blocks

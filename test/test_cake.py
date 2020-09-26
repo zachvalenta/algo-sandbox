@@ -17,3 +17,8 @@ def test_mtg_merge():
     assert mtg_merge(mtgs=[control, (6, 9)]) == [(6, 10)]
 
     assert mtg_merge(mtgs=[control, (3, 11)]) == [(3, 11)]
+
+    # their unit tests
+    assert mtg_merge(mtgs=[(1, 3), (2, 4)]) == [(1, 4)]
+    assert mtg_merge(mtgs=[(5, 6), (6, 8)]) == [(5, 8)]
+    assert mtg_merge(mtgs=[(1, 8), (2, 5)]) == [(1, 8)]
