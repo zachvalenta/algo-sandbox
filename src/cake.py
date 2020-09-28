@@ -16,17 +16,24 @@ def mtg_merge(mtgs):
         mtg_end = mtg[1]
         block_start = blocks[0][0]
         block_end = blocks[0][1]
-        # conditions
-        link_maj_to_min = block_end + 1 == mtg_start
-        link_min_to_min = block_start + 1 == mtg_start
-        link_maj_to_maj = block_end > mtg_end
         # logic
-        if link_maj_to_maj:
-            continue
-        elif link_maj_to_min:
-            blocks[ind - 1] = (block_start, mtg_end)
-        elif link_min_to_min:
-            blocks[ind - 1] = (block_start, mtg_end)
+        if block_end + 1 == mtg_start:
+            blocks.pop()
+            blocks.append((block_start, mtg_end))
+        elif block_start + 1 == mtg_start:
+            if block_end >= mtg_end:
+                blocks.pop()
+                blocks.append((block_start, block_end))
+            else:
+                blocks.pop()
+                blocks.append((block_start, mtg_end))
+        elif block_end >= mtg_start:
+            if block_end >= mtg_end:
+                blocks.pop()
+                blocks.append((block_start, block_end))
+            else:
+                blocks.pop()
+                blocks.append((block_start, mtg_end))
         else:
             blocks.append((mtg_start, mtg_end))
     return blocks
