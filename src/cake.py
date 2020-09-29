@@ -14,8 +14,8 @@ def mtg_merge(mtgs):
         # DSL
         mtg_start = mtg[0]
         mtg_end = mtg[1]
-        block_start = blocks[0][0]
-        block_end = blocks[0][1]
+        block_start = blocks[-1:][0][0]
+        block_end = blocks[-1:][0][1]
         # logic
         if block_end + 1 == mtg_start:
             blocks.pop()

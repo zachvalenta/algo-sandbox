@@ -16,3 +16,6 @@ def test_mtg_merge():
     assert mtg_merge(mtgs=[control, (8, 11)]) == [(7, 11)]
     assert mtg_merge(mtgs=[control, (8, 10)]) == [(7, 10)]
     assert mtg_merge(mtgs=[(1, 4), (2, 5), (5, 8)]) == [(1, 8)]  # IC test case
+    assert mtg_merge(mtgs=[(1, 10), (2, 5), (6, 8), (9, 10), (10, 12)]) == [
+        (1, 12)
+    ]  # IC test case
