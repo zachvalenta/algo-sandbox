@@ -17,17 +17,7 @@ def mtg_merge(mtgs):
         block_start = blocks[-1:][0][0]
         block_end = blocks[-1:][0][1]
         # logic
-        if block_end + 1 == mtg_start:
-            blocks.pop()
-            blocks.append((block_start, mtg_end))
-        elif block_start + 1 == mtg_start:
-            if block_end >= mtg_end:
-                blocks.pop()
-                blocks.append((block_start, block_end))
-            else:
-                blocks.pop()
-                blocks.append((block_start, mtg_end))
-        elif block_end >= mtg_start:
+        if block_end >= mtg_start:
             if block_end >= mtg_end:
                 blocks.pop()
                 blocks.append((block_start, block_end))
