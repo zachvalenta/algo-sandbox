@@ -4,7 +4,6 @@ from src.miscellaneous import (
     do_sum,
     find_positive_factors,
     fizz_buzz,
-    reverse_array_imperative,
     rotate_array,
     set_cover,
 )
@@ -42,11 +41,6 @@ def test_set_cover():
 def test_rotate_array():
     my_arr = [1, 2, 3, 4]
     assert list(rotate_array(my_arr)) == [4, 1, 2, 3]
-
-
-def test_reverse_array_imperative():
-    my_arr = [1, 2, 3, 4]
-    assert reverse_array_imperative(my_arr) == [4, 3, 2, 1]
 
 
 def test_fizz_buzz():

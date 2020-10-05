@@ -1,20 +1,20 @@
-import src.search as search
+from src.search import simple, binary, bfs, dijkstra
 
 
 def test_simple():
-    assert search.simple() <= 100
+    assert simple() <= 100
 
 
 def test_binary_happy():
     query = 42
     list_happy = [2, 13, 24, 35, 42, 57, 68, 79]
-    assert search.binary(query, list_happy) == "found 42"
+    assert binary(query, list_happy) == "found 42"
 
 
 def test_binary_sad():
     query = 42
     list_unhappy = [2, 13, 24, 35, 46, 57, 68, 79]
-    assert search.binary(query, list_unhappy) == "could not find 42"
+    assert binary(query, list_unhappy) == "could not find 42"
 
 
 def test_bfs():
@@ -23,8 +23,8 @@ def test_bfs():
     network["amber"] = ["joe"]
     network["jack"] = ["shuja", "garrett"]
     network["shuja"] = ["trotsky"]
-    assert search.bfs(network, "trotsky") is True
-    assert search.bfs(network, "bob") is False
+    assert bfs(network, "trotsky") is True
+    assert bfs(network, "bob") is False
 
 
 def test_dijkstra():
@@ -49,4 +49,4 @@ def test_dijkstra():
     paths['a']  # 'b'
     paths['b']  # 'root'
     """
-    assert search.dijkstra(graph) == {"a": 5, "b": 2, "terminus": 6}
+    assert dijkstra(graph) == {"a": 5, "b": 2, "terminus": 6}

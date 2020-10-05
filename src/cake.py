@@ -1,3 +1,8 @@
+###
+# ARRAYS
+###
+
+
 def mtg_merge(mtgs):
     """
     https://www.interviewcake.com/question/python3/merging-ranges
@@ -27,3 +32,34 @@ def mtg_merge(mtgs):
         else:
             blocks.append((mtg_start, mtg_end))
     return blocks
+
+
+def reverse_out_of_place_imperative(qd):
+    new_qd = []
+    for i in reversed(qd):
+        new_qd.append(i)
+    return new_qd
+
+
+def reverse_out_of_place_pythonic(qd):
+    return qd[::-1]
+
+
+def reverse_in_place_imperative(qd):
+    if not qd:
+        return qd
+    start = 0
+    end = len(qd) - 1
+    for ind, el in enumerate(qd):
+        if ind == len(qd) // 2:
+            return qd
+        hold_start = qd[start]
+        qd[start] = qd[end]
+        qd[end] = hold_start
+        start += 1
+        end -= 1
+
+
+def reverse_in_place_pythonic(qd):
+    qd.reverse()
+    return qd

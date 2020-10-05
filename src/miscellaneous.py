@@ -7,13 +7,6 @@ def rotate_array(arr):
     return dq
 
 
-def reverse_array_imperative(arr):
-    holder = []
-    for i in reversed(arr):
-        holder.append(i)
-    return holder
-
-
 def fizz_buzz(num):
     if num % 3 == 0:
         return "fizz"

@@ -1,4 +1,10 @@
-from src.cake import mtg_merge
+from src.cake import (
+    mtg_merge,
+    reverse_out_of_place_imperative,
+    reverse_out_of_place_pythonic,
+    reverse_in_place_pythonic,
+    reverse_in_place_imperative,
+)
 
 
 def test_mtg_merge():
@@ -17,4 +23,37 @@ def test_mtg_merge():
         (0, 1),
         (3, 8),
         (9, 12),
+    ]
+
+
+def test_reverse_out_of_place():
+    qd_empty = []
+    qd_single = ["a"]
+    qd_full = ["a", "b", "c", "d", "e"]
+    assert reverse_out_of_place_imperative(qd_empty) == []
+    assert reverse_out_of_place_pythonic(qd_empty) == []
+    assert reverse_out_of_place_imperative(qd_single) == ["a"]
+    assert reverse_out_of_place_pythonic(qd_single) == ["a"]
+    assert reverse_out_of_place_imperative(qd_full) == ["e", "d", "c", "b", "a"]
+    assert reverse_out_of_place_pythonic(qd_full) == ["e", "d", "c", "b", "a"]
+
+
+def test_reverse_in_place():
+    assert reverse_in_place_imperative([]) == []
+    assert reverse_in_place_imperative(["a"]) == ["a"]
+    assert reverse_in_place_imperative(["a", "b", "c", "d", "e"]) == [
+        "e",
+        "d",
+        "c",
+        "b",
+        "a",
+    ]
+    assert reverse_in_place_pythonic([]) == []
+    assert reverse_in_place_pythonic(["a"]) == ["a"]
+    assert reverse_in_place_pythonic(["a", "b", "c", "d", "e"]) == [
+        "e",
+        "d",
+        "c",
+        "b",
+        "a",
     ]
