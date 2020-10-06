@@ -53,9 +53,7 @@ def reverse_in_place_imperative(qd):
     for ind, el in enumerate(qd):
         if ind == len(qd) // 2:
             return qd
-        hold_start = qd[start]
-        qd[start] = qd[end]
-        qd[end] = hold_start
+        qd[start], qd[end] = qd[end], qd[start]
         start += 1
         end -= 1
 
