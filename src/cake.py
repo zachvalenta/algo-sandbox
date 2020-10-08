@@ -6,6 +6,7 @@
 def mtg_merge(mtgs):
     """
     https://www.interviewcake.com/question/python3/merging-ranges
+    runtime: O(n)
     take list of meetings and merge into blocks when possible
     list of meetings not sorted but meeting start/end are
     """

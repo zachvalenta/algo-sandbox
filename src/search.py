@@ -110,3 +110,11 @@ def dijkstra(graph):
         processed_nodes.append(node)
         node, pw = get_node_w_lightest_path(path_weights, processed_nodes)
     return path_weights
+
+
+def engine(query, pages):
+    results = list()
+    for page in pages:
+        if page.find(query) != -1:
+            results.append(page)
+    return results

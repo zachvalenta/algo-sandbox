@@ -16,7 +16,7 @@ def fizz_buzz(num):
         return num
 
 
-def set_cover(states_needed, stations):
+def set_covering(states_needed, stations):
     states_covered = set()
     stations_chosen = list()
 

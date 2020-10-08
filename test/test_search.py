@@ -1,4 +1,4 @@
-from src.search import simple, binary, bfs, dijkstra
+from src.search import simple, binary, bfs, dijkstra, engine
 
 
 def test_simple():
@@ -50,3 +50,13 @@ def test_dijkstra():
     paths['b']  # 'root'
     """
     assert dijkstra(graph) == {"a": 5, "b": 2, "terminus": 6}
+
+
+def test_engine():
+    page_one = "hi there"
+    page_two = "hi you"
+    page_three = "aloha"
+    assert engine(query="hi", pages=[page_one, page_two, page_three]) == [
+        page_one,
+        page_two,
+    ]

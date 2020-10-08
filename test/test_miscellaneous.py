@@ -5,7 +5,7 @@ from src.miscellaneous import (
     find_positive_factors,
     fizz_buzz,
     rotate_array,
-    set_cover,
+    set_covering,
 )
 
 
@@ -21,7 +21,7 @@ def test_do_factorial():
     do_factorial(4) == 24
 
 
-def test_set_cover():
+def test_set_covering():
     states = {"mt", "wa", "or", "id", "nv", "ut", "ca", "az"}
     stations = {
         "kone": {"id", "nv", "ut"},
@@ -30,7 +30,7 @@ def test_set_cover():
         "kfour": {"nv", "ut"},
         "kfive": {"ca", "az"},
     }
-    assert set_cover(states_needed=states, stations=stations) == [
+    assert set_covering(states_needed=states, stations=stations) == [
         "kone",
         "ktwo",
         "kthree",
