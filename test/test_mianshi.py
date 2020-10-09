@@ -31,5 +31,5 @@ def test_word_count():
 
 
 def test_count_pairs():
-    assert count_pairs(numbers=[4, 3, 2, 9, -2, 3], target=7) == 3
-    assert count_pairs([4, 4, 1, 4, 3, 5, 4], target=8) == 7
+    assert count_pairs(nums=[4, 3, 2, 9, -2, 3], target=7) == 3
+    assert count_pairs(nums=[4, 4, 1, 4, 3, 5, 4], target=8) == 7

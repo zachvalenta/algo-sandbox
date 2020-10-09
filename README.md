@@ -1,9 +1,10 @@
 # overview
 
-Algorithms and data structures from:
+Algorithms from:
 
 * [Grokking Algorithms](https://www.manning.com/books/grokking-algorithms)
 * [Hacker Rank](https://www.hackerrank.com/interview/interview-preparation-kit)
+* [Interview Cake](https://www.interviewcake.com/)
 
 including implementations of:
 
