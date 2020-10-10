@@ -1,8 +1,7 @@
 def quicksort(unsorted_list):
     """
-    📙 4.65
-    📈 O (n log n)
-    💡 partition on pivot until you get two el you can swap
+    Bhargava 4.65
+    runtime:  O (n log n)
     """
 
     # BASE
@@ -12,9 +11,7 @@ def quicksort(unsorted_list):
     # SORT
     if len(unsorted_list) == 2:
         if unsorted_list[0] > unsorted_list[1]:
-            tmp = unsorted_list[0]  # find more elegant impl
-            unsorted_list[0] = unsorted_list[1]
-            unsorted_list[1] = tmp
+            unsorted_list[0], unsorted_list[1] = unsorted_list[1], unsorted_list[0]
             return unsorted_list
 
     # PARTITION
