@@ -1,27 +1,23 @@
-def quicksort_zjv(qd):
+def quicksort(qd):
     """
     ref: Bhargava 4.65
     runtime: O (n log n)
     strat: D&C via partition
+    notes: check out Bhargava's impl re: concatenation
     """
     # BASE
     if len(qd) < 2:
         return qd
 
-    # SORT
-    if len(qd) == 2:
-        if qd[0] > qd[1]:
-            qd[0], qd[1] = qd[1], qd[0]
-            return qd
-
     # PARTITION
     pivot = qd[len(qd) // 2]
+    # SORT
     smaller = [x for x in qd if x < pivot]
     larger = [x for x in qd if x > pivot]
-    # RECURSION
-    first_half = quicksort_zjv(smaller)
+    # RECURSE
+    first_half = quicksort(smaller)
     first_half.append(pivot)
-    second_half = quicksort_zjv(larger)
+    second_half = quicksort(larger)
     return first_half + second_half
 
 
