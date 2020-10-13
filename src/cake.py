@@ -5,18 +5,14 @@
 
 def mtg_merge(mtgs):
     """
-    https://www.interviewcake.com/question/python3/merging-ranges
-    runtime: O(n)
-    take list of meetings and merge into blocks when possible
-    list of meetings not sorted but meeting start/end are
+    ref: https://www.interviewcake.com/question/python3/merging-ranges
+    desc: take list of meetings and merge into blocks when possible
+    runtime: - Timsort (n log n) my sort (n) = ? according to IC it's just O(n log n)
+    notes: list of meetings not sorted but meeting start/end are
     """
     mtgs.sort()
-    blocks = list()
-    for ind, mtg in enumerate(mtgs):
-        # initial block
-        if ind == 0:
-            blocks.append((mtg[0], mtg[1]))
-            continue
+    blocks = [mtgs[0]]
+    for ind, mtg in enumerate(mtgs[1:]):
         # DSL
         mtg_start = mtg[0]
         mtg_end = mtg[1]
