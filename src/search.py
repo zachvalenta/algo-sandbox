@@ -4,10 +4,9 @@ import random
 
 def simple():
     """
-    🛠 look around in the attic
-    📙 1.5
-    📈 O(n)
-    💡 "is it this one?" all the way through
+    ref: Bhargava 1.5
+    runtime: O(n)
+    strat: brute force
     """
     number_to_guess = random.randint(0, 99)
     accumulated_guesses = 0

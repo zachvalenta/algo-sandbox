@@ -1,26 +1,27 @@
-def quicksort(unsorted_list):
+def quicksort_zjv(qd):
     """
-    Bhargava 4.65
-    runtime:  O (n log n)
+    ref: Bhargava 4.65
+    runtime: O (n log n)
+    strat: D&C via partition
     """
-
     # BASE
-    if len(unsorted_list) < 2:
-        return unsorted_list
+    if len(qd) < 2:
+        return qd
 
     # SORT
-    if len(unsorted_list) == 2:
-        if unsorted_list[0] > unsorted_list[1]:
-            unsorted_list[0], unsorted_list[1] = unsorted_list[1], unsorted_list[0]
-            return unsorted_list
+    if len(qd) == 2:
+        if qd[0] > qd[1]:
+            qd[0], qd[1] = qd[1], qd[0]
+            return qd
 
     # PARTITION
-    pivot = unsorted_list[len(unsorted_list) // 2]
-    smaller = [x for x in unsorted_list if x < pivot]
-    larger = [x for x in unsorted_list if x > pivot]
-    first_half = quicksort(smaller)
-    first_half.append(pivot)  # append and return new list in single go
-    second_half = quicksort(larger)
+    pivot = qd[len(qd) // 2]
+    smaller = [x for x in qd if x < pivot]
+    larger = [x for x in qd if x > pivot]
+    # RECURSION
+    first_half = quicksort_zjv(smaller)
+    first_half.append(pivot)
+    second_half = quicksort_zjv(larger)
     return first_half + second_half
 
 
