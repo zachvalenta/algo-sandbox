@@ -1,9 +1,10 @@
 def quicksort(qd):
     """
     ref: Bhargava 4.65
-    runtime: O (n log n)
     strat: D&C via partition
-    notes: check out Bhargava's impl re: concatenation
+    space: O (n log n)
+    time: O (n)
+    notes: Bhargava's impl does diff concat
     """
     # BASE
     if len(qd) < 2:

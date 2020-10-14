@@ -7,7 +7,8 @@ def mtg_merge(mtgs):
     """
     ref: https://www.interviewcake.com/question/python3/merging-ranges
     desc: take list of meetings and merge into blocks when possible
-    runtime: - Timsort (n log n) my sort (n) = ? according to IC it's just O(n log n)
+    time: O(n log n) - Timsort (n log n) my sort (n); 不明觉厉
+    space: O(n) bc return list could be same size as input list
     notes: list of meetings not sorted but meeting start/end are
     """
     mtgs.sort()
@@ -32,6 +33,10 @@ def mtg_merge(mtgs):
 
 
 def reverse_out_of_place_imperative(qd):
+    """
+    time: O(n)
+    space: O(n)
+    """
     new_qd = []
     for i in reversed(qd):
         new_qd.append(i)
@@ -39,10 +44,18 @@ def reverse_out_of_place_imperative(qd):
 
 
 def reverse_out_of_place_pythonic(qd):
+    """
+    time: O(n)
+    space: O(n)
+    """
     return qd[::-1]
 
 
 def reverse_in_place_imperative(qd):
+    """
+    time: O(n)
+    space: O(1)
+    """
     if not qd:
         return qd
     start = 0
@@ -56,5 +69,9 @@ def reverse_in_place_imperative(qd):
 
 
 def reverse_in_place_pythonic(qd):
+    """
+    time: O(n)
+    space: O(1)
+    """
     qd.reverse()
     return qd
