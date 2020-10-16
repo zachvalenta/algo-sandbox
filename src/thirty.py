@@ -10,3 +10,7 @@ def all_eq_pythonic(qd):
     https://www.30secondsofcode.org/python/s/all-equal
     """
     return len(set(qd)) == 1
+
+
+def all_unique(qd):
+    return len(set(qd)) == len(qd)
