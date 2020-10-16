@@ -21,3 +21,10 @@ def arithmetic_progression(start, stop):
     for el in range(start, stop + start, start):
         qd.append(el)
     return qd
+
+
+def upper_words_in_string(txt):
+    qd = list()
+    for ind, el in enumerate(txt.split()):
+        qd.append(el[0].upper() + el[1:])
+    return " ".join(qd)
