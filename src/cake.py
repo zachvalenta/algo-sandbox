@@ -75,3 +75,25 @@ def reverse_in_place_pythonic(qd):
     """
     qd.reverse()
     return qd
+
+
+def reverse_sentence(qd):
+    """
+    ref: https://www.interviewcake.com/question/python3/reverse-words
+    desc: in-place
+    """
+    start = 0
+    rev = list()
+    if not qd or " " not in qd:
+        return qd
+    for ind, val in enumerate(qd):
+        if val == " ":
+            rev.append("".join(qd[start : ind + 1]))
+            start = ind + 1
+        if ind == len(qd) - 1:
+            rev.append("".join(qd[start : ind + 1]))
+    rev.reverse()
+    rev[0] = rev[0] + " "
+    rev[-1] = rev[-1][:-1]
+    joined = list("".join(rev))
+    return joined

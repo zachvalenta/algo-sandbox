@@ -4,6 +4,7 @@ from src.cake import (
     reverse_out_of_place_pythonic,
     reverse_in_place_pythonic,
     reverse_in_place_imperative,
+    reverse_sentence,
 )
 
 
@@ -57,3 +58,13 @@ def test_reverse_in_place():
         "b",
         "a",
     ]
+
+
+def test_reverse_sentence():
+    assert (reverse_sentence(list(""))) == list("")
+    assert (reverse_sentence(list("vault"))) == list("vault")
+    assert (reverse_sentence(list("thief cake"))) == list("cake thief")
+    assert (reverse_sentence(list("one another get"))) == list("get another one")
+    assert (reverse_sentence(list("rat the ate cat the"))) == list(
+        "the cat ate the rat"
+    )
