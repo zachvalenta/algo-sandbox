@@ -14,3 +14,10 @@ def all_eq_pythonic(qd):
 
 def all_unique(qd):
     return len(set(qd)) == len(qd)
+
+
+def arithmetic_progression(start, stop):
+    qd = list()
+    for el in range(start, stop + start, start):
+        qd.append(el)
+    return qd

@@ -1,4 +1,4 @@
-from src.thirty import all_eq_naive, all_eq_pythonic, all_unique
+from src.thirty import all_eq_naive, all_eq_pythonic, all_unique, arithmetic_progression
 
 
 def test_all_eq():
@@ -15,3 +15,9 @@ def test_all_unique():
     dupes = [1, 2, 1]
     assert all_unique(qd=unique) is True
     assert all_unique(qd=dupes) is False
+
+
+def test_arithmetic_progression():
+    assert arithmetic_progression(start=3, stop=21) == [3, 6, 9, 12, 15, 18, 21]
+    assert arithmetic_progression(start=5, stop=25) == [5, 10, 15, 20, 25]
+    assert arithmetic_progression(start=10, stop=50) == [10, 20, 30, 40, 50]
