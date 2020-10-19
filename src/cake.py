@@ -81,19 +81,23 @@ def reverse_sentence(qd):
     """
     ref: https://www.interviewcake.com/question/python3/reverse-words
     desc: in-place
+    time: O(n)
+    space: O(n)
     """
     start = 0
     rev = list()
+    # empty or one-word sentence
     if not qd or " " not in qd:
         return qd
     for ind, val in enumerate(qd):
+        # add word
         if val == " ":
             rev.append("".join(qd[start : ind + 1]))
             start = ind + 1
+        # last word
         if ind == len(qd) - 1:
             rev.append("".join(qd[start : ind + 1]))
     rev.reverse()
-    rev[0] = rev[0] + " "
-    rev[-1] = rev[-1][:-1]
-    joined = list("".join(rev))
-    return joined
+    # add/trim white space for first/last words
+    rev[0], rev[-1] = rev[0] + " ", rev[-1][:-1]
+    return list("".join(rev))
