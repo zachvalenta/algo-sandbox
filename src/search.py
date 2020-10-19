@@ -114,6 +114,6 @@ def dijkstra(graph):
 def engine(query, pages):
     results = list()
     for page in pages:
-        if page.find(query) != -1:
+        if query in page:
             results.append(page)
     return results
