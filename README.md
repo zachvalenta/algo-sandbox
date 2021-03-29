@@ -25,13 +25,9 @@ because:
 ```makefile
 ======================================================================
 
-🐛  DEBUG
-
-pdb:        run unit tests w/ pdb breakpoint
-repl:       open REPL w/ bpython
-
 📊 CODE QUALITY
 
+repl:       open REPL w/ bpython
 test:       run unit tests, view basic coverage report in terminal
 cov:        view HTML coverage report in browser
 lint:       lint using flake8

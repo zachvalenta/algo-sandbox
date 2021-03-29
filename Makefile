@@ -4,13 +4,9 @@ help:
 	@echo
 	@echo "======================================================================"
 	@echo
-	@echo "🐛  DEBUG"
-	@echo
-	@echo "pdb:        run unit tests w/ pdb breakpoint"
-	@echo "repl:       open REPL w/ bpython"
-	@echo
 	@echo "📊 CODE QUALITY"
 	@echo
+	@echo "repl:       open REPL w/ bpython"
 	@echo "test:       run unit tests, view basic coverage report in terminal"
 	@echo "cov:        view HTML coverage report in browser"
 	@echo "lint:       lint using flake8"
@@ -26,22 +22,14 @@ help:
 	@echo
 
 #
-# 🐛  DEBUG
+# 📊 CODE QUALITY
 #
-
-pdb:
-	poetry run coverage run --source='src' -m pytest -s --pdb
 
 repl:
 	export PYTHONSTARTUP='./repl.py' && poetry run bpython
 
-#
-# 📊 CODE QUALITY
-#
-
 test:
-	# workaround for terminal freeze if pytest run encounters breakpoint
-	rg pdb -g 'src/*' || rg pdb -g 'test/*' || poetry run coverage run --source='src' -m pytest -v && poetry run coverage report -m
+	poetry run coverage run --source='src' -m pytest -sv --pdb && poetry run coverage report -m
 
 cov:
 	poetry run coverage html; open htmlcov/index.html
