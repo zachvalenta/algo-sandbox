@@ -5,6 +5,15 @@ https://www.hackerrank.com/domains/regex
 import re
 
 
+def test_starts_with():
+    ios = "^UnitedMasters\/\w"
+    goog = "^okhttp\/\w"
+    assert re.search(ios, "UnitedMasters/123") is not None
+    assert re.search(ios, "United/123") is None
+    assert re.search(goog, "okhttp/456") is not None
+    assert re.search(goog, "ohhhhttp/456") is None
+
+
 def test_file_extension_tarball():
     regex = "^[\w\-]*\.tar\.gz$"
     assert re.search(regex, "my-file.tar.gz") is not None
