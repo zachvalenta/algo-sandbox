@@ -1,7 +1,6 @@
 import sys
 import re
 
-from src import hacker_rank as hr, mianshi as ms, miscellaneous as misc, search as sr, sort
 
 print("\nSOURCE MODULES: \n")
 for mod in dir(sys.modules[__name__]):
