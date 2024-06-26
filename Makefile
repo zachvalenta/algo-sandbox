@@ -9,7 +9,7 @@ help:
 	@echo "repl:       open REPL w/ bpython"
 	@echo "test:       run unit tests, view basic coverage report in terminal"
 	@echo "cov:        view HTML coverage report in browser"
-	@echo "lint:       lint using flake8"
+	@echo "lint:       lint using ruff"
 	@echo "fmt:        autoformat using black"
 	@echo "hooks:      set Git hooks w/ pre-commit"
 	@echo
@@ -35,7 +35,7 @@ cov:
 	poetry run coverage html; open htmlcov/index.html
 
 lint:
-	poetry run flake8 src test
+	poetry run ruff check
 
 fmt:
 	poetry run black src test
