@@ -48,23 +48,22 @@ wcwidth = ">=0.1.4"
 
 [[package]]
 name = "bpython"
-version = "0.22.1"
+version = "0.24"
 description = ""
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.7"
 files = [
-    {file = "bpython-0.22.1-py3-none-any.whl", hash = "sha256:27ab07d64b9f0268990612aa5c1ab7be8705aa819b14b72c9e4b3b0418458937"},
-    {file = "bpython-0.22.1.tar.gz", hash = "sha256:1fb1e0a52332579fc4e3dcf75e21796af67aae2be460179ecfcce9530a49a200"},
+    {file = "bpython-0.24-py3-none-any.whl", hash = "sha256:0d196ae3d1ce3dcd559a3fb89ed2c468dfbd1504af0d680b906dd65a9c7a32eb"},
+    {file = "bpython-0.24.tar.gz", hash = "sha256:98736ffd7a8c48fd2bfb53d898a475f4241bde0b672125706af04d9d08fd3dbd"},
 ]
 
 [package.dependencies]
-curtsies = ">=0.3.5"
+curtsies = ">=0.4.0"
 cwcwidth = "*"
 greenlet = "*"
 pygments = "*"
 pyxdg = "*"
 requests = "*"
-typing-extensions = "*"
 
 [package.extras]
 clipboard = ["pyperclip"]
@@ -763,17 +762,6 @@ files = [
 ]
 
 [[package]]
-name = "typing-extensions"
-version = "4.12.2"
-description = "Backported and Experimental Type Hints for Python 3.8+"
-optional = false
-python-versions = ">=3.8"
-files = [
-    {file = "typing_extensions-4.12.2-py3-none-any.whl", hash = "sha256:04e5ca0351e0f3f85c6853954072df659d0d13fac324d0072316b67d7794700d"},
-    {file = "typing_extensions-4.12.2.tar.gz", hash = "sha256:1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"},
-]
-
-[[package]]
 name = "urllib3"
 version = "2.2.2"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
@@ -841,4 +829,4 @@ test = ["pytest"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "5c6b9029e2f101934c93ec0f6e12a41d57001e08ed98b8891e2a7757d3d7836b"
+content-hash = "040b62271b39ffd05a99e67f193ca7f97587a446a128a8e5bf618fca44d237a2"
