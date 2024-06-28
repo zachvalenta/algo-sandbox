@@ -1,12 +1,11 @@
-import sys
-import re
+import pkgutil
 
+def list_user_defined_modules(package_name):
+    user_modules = []
+    package = __import__(package_name)
+    for importer, modname, ispkg in pkgutil.iter_modules(package.__path__):
+        user_modules.append(modname)
+    return user_modules
 
-print("\nSOURCE MODULES: \n")
-for mod in dir(sys.modules[__name__]):
-    if (
-        re.search(r"__\w", mod) is None and
-        re.search(r"^(help|sys|re)$", mod) is None
-    ):
-        print(mod)
-
+modules = list_user_defined_modules('src')
+print("src modules:", modules)
