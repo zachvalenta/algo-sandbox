@@ -2,6 +2,11 @@ import importlib
 import pkgutil
 import os
 
+from rich import pretty
+from rich import print as rp
+
+pretty.install()
+
 def list_all_user_defined_modules(base_directory):
     user_modules = []
     for root, dirs, files in os.walk(base_directory):
@@ -26,5 +31,4 @@ def list_all_user_defined_modules(base_directory):
     return user_modules
 
 modules = list_all_user_defined_modules(os.getcwd())
-print('user-defined modules:', modules)
-
+rp('\nUSER-DEFINED MODULES:', modules)

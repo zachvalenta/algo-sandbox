@@ -27,7 +27,7 @@ help:
 #
 
 repl:
-	export PYTHONSTARTUP='./repl.py' && poetry run bpython
+	export PYTHONSTARTUP='./repl.py' && poetry run bpython -q
 
 test:
 	poetry run coverage run --source='src' -m pytest -sv --pdb && poetry run coverage report -m
