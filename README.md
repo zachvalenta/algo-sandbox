@@ -1,5 +1,9 @@
 # overview
 
+fix pytest warnings https://stackoverflow.com/questions/50504500/deprecationwarning-invalid-escape-sequence-what-to-use-instead-of-d
+
+https://github.com/maaslalani/nap
+
 Algorithms from:
 
 * [Grokking Algorithms](https://www.manning.com/books/grokking-algorithms)
