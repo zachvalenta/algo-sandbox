@@ -3,6 +3,7 @@ name = "algos"
 version = "0.1.0"
 description = ""
 authors = ["zachvalenta <zjv5002@gmail.com>"]
+packages = [{include = "src"}]
 
 [tool.poetry.dependencies]
 python = "^3.12"
